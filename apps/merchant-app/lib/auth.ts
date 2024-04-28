@@ -33,11 +33,11 @@ export const authOptions = {
           create: {
             email: user.email,
             name: user.name,
-            auth_type: account.provider === "google" ? "Google" : "Github" // Use a prisma type here
+            auth_type: account.provider === "google" ? "Google" : "Github" 
           },
           update: {
             name: user.name,
-            auth_type: account.provider === "google" ? "Google" : "Github" // Use a prisma type here
+            auth_type: account.provider === "google" ? "Google" : "Github" 
           }
         });
 
