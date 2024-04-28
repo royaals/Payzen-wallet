@@ -4,13 +4,16 @@
     "dependencies": {
         "@prisma/client": "^5.13.0"
     },
-    "devDependencies": {
-        "prisma": "^5.13.0"
-    },
     "exports": {
         "./client": "./index.ts"
     },
     "prisma": {
         "seed": "ts-node prisma/seed.ts"
+    },
+    "devDependencies": {
+        "@types/node": "^20.12.7",
+        "prisma": "^5.13.0",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.4.5"
     }
 }
