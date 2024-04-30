@@ -60,7 +60,7 @@ export const authOptions = {
     pages: {
 
     signIn: "/auth/signin",
-    signOut: "/auth/signout"
+    signOut: "/payzen"
     },
 
     secret: process.env.JWT_SECRET || "secret",

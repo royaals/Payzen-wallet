@@ -16,19 +16,19 @@ export const P2pTransfer = ({
             </div>
         </Card>
     }
-    return <Card title="Fund Transactions">
+    return <Card title="Fund Transfer Transactions">
         <div className="pt-2">
             {transactions.map(t => <div className="flex justify-between">
                 <div>
                     <div className="text-sm">
-                        Received INR
+                        Debited INR
                     </div>
                     <div className="text-slate-600 text-xs">
                         {t.time.toDateString()}
                     </div>
                 </div>
                 <div className="flex flex-col justify-center">
-                    + Rs {t.amount / 100}
+                    - Rs {t.amount / 100}
                 </div>
 
             </div>)}

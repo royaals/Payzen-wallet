@@ -5,7 +5,7 @@ export default function NotFound() {
     <div>
       <h2>Not Found</h2>
       <p>Could not find requested resource</p>
-      <Link href="/payzen">Return Home</Link>
+      <Link href="/api/auth/signin">Return Home</Link>
     </div>
   )
 }
