@@ -3,28 +3,41 @@ import { ChangeEvent } from "react";
 import { FaEye as Eye, FaEyeSlash as EyeSlash } from 'react-icons/fa';
 import {useRef,useState } from "react";
 
-
+import Link from 'next/link';
 import { signIn } from "next-auth/react";
 const Form = ({type}: {type: "signup" | "signin"}) => {
+  const name=useRef("");
+  const email=useRef("");
   const phone=useRef("");
   const pass=useRef("");
+ 
 
   const onSubmit= async () => {
     const result =await signIn("credentials",{
+     name:name.current,
+     email: email.current,
      phone: phone.current,
      password: pass.current,
      redirect: true,
-     callbackUrl: "/transfer"
+     callbackUrl: "/home"
     })
   }
   return (
     <div className=" bg-card text-card-foreground shadow-sm w-full max-w-md" data-v0-t="card">
       <div className="flex flex-col p-6 space-y-2">
         {type === "signup" ? <h3 className="whitespace-nowrap font-bold text-3xl">Sign Up</h3> : <h3 className="whitespace-nowrap font-bold text-3xl">Sign in</h3>}
-        {type === "signup" ? <p className="text-2xl text-slate-500 text-muted-foreground">Get started with an account on Payzen.</p> : <p className="text-2xl text-slate-500 text-muted-foreground">Welcome back!</p>}
+        {type === "signup" ? <p className="text-2xl text-slate-500 text-muted-foreground">Get started with an account.</p> : <p className="text-2xl text-slate-500 text-muted-foreground">Welcome back!</p>}
       </div>
       <div className="p-6 space-y-4">
         <div className="space-y-2 mb-5">
+        <div className="space-y-2 mb-5">
+        {type === "signup" ? <LabelledInput label="Name" placeholder="Enter your name" onChange={(e) => (name.current=e.target.value)} /> : null}
+          
+        </div>
+        <div className="space-y-2 mb-5">
+       
+        {type === "signup" ? <LabelledInput label="Email" placeholder="Enter your email" onChange={(e) => (email.current=e.target.value)} />: null}
+     </div>
         <div className="space-y-2 mb-5">
          <LabelledInput label="Phone Number" placeholder="Enter your Phone Number" onChange={(e) => (phone.current=e.target.value)} /> 
           
@@ -41,7 +54,26 @@ const Form = ({type}: {type: "signup" | "signin"}) => {
        
         </button>
       </div>
-     
+        
+      <div className="mt-4 mb-4 text-center text-sm">
+        {type === "signin" ? (
+          <>
+            Don't have an account?
+            <Link href="/auth/signup" className="pl-2 underline">
+              Sign up
+            </Link>
+          </>
+        ) : (
+          <>
+            Already have an account?
+            <Link href="/auth/signin" className="pl-2 underline">
+              Sign in
+            </Link>
+          </>
+        )}
+      </div>
+
+
    
    </div>
   )

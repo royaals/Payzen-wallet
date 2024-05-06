@@ -13,6 +13,6 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "app/page.jsx", "app/auth/signin/page.jsx", "app/auth/signup/page.jsx", "components/Form.tsx"  ],
+, "app/page.jsx", "app/auth/signin/page.tsx", "app/auth/signup/page.tsx", "components/Form.tsx"  ],
   "exclude": ["node_modules"]
 }
