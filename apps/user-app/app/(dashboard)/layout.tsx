@@ -1,5 +1,6 @@
 import { SidebarItem } from "../../components/SidebarItem";
 import { AppbarClient } from "../../components/AppbarClient";
+
 export default function Layout({
   children,
 }: {
@@ -8,11 +9,11 @@ export default function Layout({
   return (
     <>
     <AppbarClient/>
-    <div className="flex">
+    <div className="flex ">
 
-        <div className="w-72 border-r border-slate-300 min-h-screen mr-4 pt-28">
+        <div className="w-72 border-r border-slate-300 min-h-screen mr-4  pt-28">
             <div>
-            <SidebarItem href={"/home"} icon={<TransferIcon />} title="Home" />
+            <SidebarItem href={"/home"} icon={<HomeIcon/>} title="Home" />
                 <SidebarItem href={"/transfer"} icon={<TransferIcon />} title="Wallet Transfer" />
                 <SidebarItem href={"/P2P"} icon={<P2PTransferIcon />} title="Transfer Funds" />
                 <SidebarItem href={"/transactions"} icon={<TransactionsIcon />} title="Transaction History" />
@@ -26,21 +27,32 @@ export default function Layout({
 }
 
 
-
+function HomeIcon(){
+  return <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"  viewBox="0 0 24 24" fill="none">
+  <path d="M8 17H16M11.0177 2.76401L4.23539 8.03914C3.78202 8.39176 3.55534 8.56807 3.39203 8.78887C3.24737 8.98446 3.1396 9.2048 3.07403 9.43907C3 9.70353 3 9.99071 3 10.5651V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21H17.8C18.9201 21 19.4802 21 19.908 20.782C20.2843 20.5903 20.5903 20.2843 20.782 19.908C21 19.4802 21 18.9201 21 17.8V10.5651C21 9.99071 21 9.70353 20.926 9.43907C20.8604 9.2048 20.7526 8.98446 20.608 8.78887C20.4447 8.56807 20.218 8.39176 19.7646 8.03914L12.9823 2.76401C12.631 2.49076 12.4553 2.35413 12.2613 2.30162C12.0902 2.25528 11.9098 2.25528 11.7387 2.30162C11.5447 2.35413 11.369 2.49076 11.0177 2.76401Z" stroke="#667085" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+}
 function TransferIcon() {
-    return <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+    return <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a2.25 2.25 0 0 0-2.25-2.25H15a3 3 0 1 1-6 0H5.25A2.25 2.25 0 0 0 3 12m18 0v6a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18v-6m18 0V9M3 12V9m18 0a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 9m18 0V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v3" />
   </svg>
+  
 }
 
 function TransactionsIcon() {
-    return <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+    return <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+    <path d="M19.42 11.75H16C15.59 11.75 15.25 11.41 15.25 11V4.01C15.25 3.27 15.54 2.58 16.06 2.06C16.58 1.54 17.27 1.25 18.01 1.25H18.02C19.27 1.26 20.45 1.75 21.35 2.64C22.25 3.55 22.74 4.75 22.74 6V8.42C22.75 10.41 21.41 11.75 19.42 11.75ZM16.75 10.25H19.42C20.58 10.25 21.25 9.58 21.25 8.42V6C21.25 5.14 20.91 4.32 20.3 3.7C19.69 3.1 18.87 2.76 18.02 2.75C18.02 2.75 18.02 2.75 18.01 2.75C17.68 2.75 17.36 2.88 17.12 3.12C16.88 3.36 16.75 3.67 16.75 4.01V10.25Z" fill="#667085"/>
+    <path d="M9 23.33C8.53 23.33 8.09 23.15 7.76 22.81L6.1 21.14C6.01 21.05 5.87 21.04 5.77 21.12L4.05 22.4C3.52 22.8 2.82 22.87 2.22 22.57C1.62 22.27 1.25 21.67 1.25 21V6C1.25 2.98 2.98 1.25 6 1.25H18C18.41 1.25 18.75 1.59 18.75 2C18.75 2.41 18.41 2.75 18 2.75C17.31 2.75 16.75 3.31 16.75 4V21C16.75 21.67 16.38 22.27 15.78 22.57C15.18 22.87 14.48 22.81 13.95 22.41L12.24 21.13C12.14 21.05 12 21.07 11.92 21.15L10.24 22.83C9.91 23.15 9.47 23.33 9 23.33ZM5.91 19.57C6.37 19.57 6.82 19.74 7.16 20.09L8.82 21.76C8.88 21.82 8.96 21.83 9 21.83C9.04 21.83 9.12 21.82 9.18 21.76L10.86 20.08C11.48 19.46 12.46 19.4 13.15 19.93L14.85 21.2C14.96 21.28 15.06 21.25 15.11 21.22C15.16 21.19 15.25 21.13 15.25 21V4C15.25 3.55 15.36 3.12 15.55 2.75H6C3.78 2.75 2.75 3.78 2.75 6V21C2.75 21.14 2.84 21.2 2.89 21.23C2.95 21.26 3.05 21.28 3.15 21.2L4.86 19.92C5.17 19.69 5.54 19.57 5.91 19.57Z" fill="#667085"/>
+    <path d="M12 13.76H9C8.59 13.76 8.25 13.42 8.25 13.01C8.25 12.6 8.59 12.26 9 12.26H12C12.41 12.26 12.75 12.6 12.75 13.01C12.75 13.42 12.41 13.76 12 13.76Z" fill="#667085"/>
+    <path d="M12 9.76001H9C8.59 9.76001 8.25 9.42001 8.25 9.01001C8.25 8.60001 8.59 8.26001 9 8.26001H12C12.41 8.26001 12.75 8.60001 12.75 9.01001C12.75 9.42001 12.41 9.76001 12 9.76001Z" fill="#667085"/>
+    <path d="M5.97021 10.01C5.42021 10.01 4.97021 9.56001 4.97021 9.01001C4.97021 8.46001 5.42021 8.01001 5.97021 8.01001C6.52021 8.01001 6.97021 8.46001 6.97021 9.01001C6.97021 9.56001 6.52021 10.01 5.97021 10.01Z" fill="#667085"/>
+    <path d="M5.97021 14.01C5.42021 14.01 4.97021 13.56 4.97021 13.01C4.97021 12.46 5.42021 12.01 5.97021 12.01C6.52021 12.01 6.97021 12.46 6.97021 13.01C6.97021 13.56 6.52021 14.01 5.97021 14.01Z" fill="#667085"/>
   </svg>
   
 }
 function P2PTransferIcon() {
-    return  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-  <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
+  return <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M15 8.25H9m6 3H9m3 6-3-3h1.5a3 3 0 1 0 0-6M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
 </svg>
+
 }
