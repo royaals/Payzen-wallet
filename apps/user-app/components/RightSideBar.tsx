@@ -11,7 +11,7 @@ const RightSidebar = ()=> {
           <div className="h-[120px] w-full bg-gradient-to-r from-violet-500 to-fuchsia-500 bg-cover bg-no-repeat" />
           <div className="relative flex px-6 max-xl:justify-center">
             <div className="flex-center absolute -top-8 size-24 rounded-full bg-gray-100 border-8 border-white p-2 shadow-profile">
-              <span className="text-5xl font-bold text-blue-500">D</span>
+              <span className="text-5xl font-bold text-[#9472e1]">D</span>
             </div>
   
             <div className="flex flex-col pt-24">

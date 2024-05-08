@@ -6,11 +6,12 @@ export const OnRampTransactions = ({
     transactions: {
         time: Date,
         amount: number,
-
+   
         status: string,
-        provider: string
+    
     }[]
 }) => {
+    
     if (!transactions.length) {
         return <Card title="Recent Transactions">
             <div className="text-center pb-8 pt-8">

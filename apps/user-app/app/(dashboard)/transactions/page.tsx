@@ -21,7 +21,8 @@ async function getOnRampTransactions() {
         time: t.startTime,
         amount: t.amount,
         status: t.status,
-        provider: t.provider
+       
+        description: t.description 
     }))
 }
 
@@ -35,7 +36,7 @@ async function getP2PTransactions() {
     return txns.map(t => ({
         time: t.timestamp,
         amount: t.amount,
-        
+        description: t.description,
     }))
 }
 export default async function() {

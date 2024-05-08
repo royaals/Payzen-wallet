@@ -31,6 +31,9 @@ model OnRampTransaction {
   status    OnRampStatus
   token     String       @unique
   provider  String
+  description String@default("Wallet Topup")
+  type      String@default("credit")
+  category  String@default("Topup")
   amount    Int
   startTime DateTime
   userId    Int
@@ -49,6 +52,10 @@ model p2pTransfer {
   id         Int      @id @default(autoincrement())
   amount     Int
   timestamp  DateTime
+  status     String@default("Success")
+  description String@default("Transfer")
+  type      String@default("debit")
+  category  String@default("Transfer")
   fromUserId Int
   fromUser   User     @relation(name: "FromUserRelation", fields: [fromUserId], references: [id])
   toUserId   Int
