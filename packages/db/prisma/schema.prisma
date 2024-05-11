@@ -34,6 +34,7 @@ model OnRampTransaction {
   description String@default("Wallet Topup")
   type      String@default("credit")
   category  String@default("Topup")
+  note     String?@default("Wallet Topup")
   amount    Int
   startTime DateTime
   userId    Int
@@ -56,6 +57,7 @@ model p2pTransfer {
   description String@default("Transfer")
   type      String@default("debit")
   category  String@default("Transfer")
+   note     String?@default("Transfer")
   fromUserId Int
   fromUser   User     @relation(name: "FromUserRelation", fields: [fromUserId], references: [id])
   toUserId   Int

@@ -47,11 +47,11 @@ import {
       <Table>
         <TableHeader className="bg-[#f9fafb]">
           <TableRow>
-            <TableHead className="px-2">Transaction</TableHead>
-            <TableHead className="px-2">Amount</TableHead>
-            <TableHead className="px-2">Status</TableHead>
-            <TableHead className="px-2">Date</TableHead>
-           <TableHead className="px-2 max-md:hidden">Category</TableHead>
+            <TableHead className="p-4">Transaction</TableHead>
+            <TableHead className="p-4">Amount</TableHead>
+            <TableHead className="p-4">Status</TableHead>
+            <TableHead className="p-4">Date</TableHead>
+           <TableHead className="p-4 max-md:hidden">Category</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -71,7 +71,7 @@ import {
                   </div>
                 </TableCell>
   
-                <TableCell className={`pl-2 pr-10 font-semibold ${
+                <TableCell className={`pl-2 pr-10 font-semibold  ${
                   isDebit || amount[0] === '-' ?
                     'text-[#f04438]'
                     : 'text-[#039855]'

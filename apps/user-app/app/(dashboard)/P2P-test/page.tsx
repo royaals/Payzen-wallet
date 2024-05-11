@@ -1,11 +1,9 @@
 import prisma from "@repo/db/client";
+
 import { getServerSession } from "next-auth";
 import { authOptions } from "../../lib/auth";
-import RecentTransactions from "../../../components/RecentTransaction";
-import TotalBalanceBox from "../../../components/TotalBalanceBox";
-
-
-
+import { SendCard } from "../../../components/SendCard"
+import { P2pTransfer } from "../../../components/P2PTransactions";
 
 async function getBalance() {
     const session = await getServerSession(authOptions);
@@ -20,10 +18,6 @@ async function getBalance() {
     }
 }
 
-
-
-
-
 async function getP2PTransactions() {
     const session = await getServerSession(authOptions);
     const txns = await prisma.p2pTransfer.findMany({
@@ -32,33 +26,30 @@ async function getP2PTransactions() {
         }
     });
     return txns.map(t => ({
-        id: t.id,
         time: t.timestamp,
         amount: t.amount,
-        description: t.description,
-        status: t.status,
-        type: t.type,
-        category: t.category
+        
     }))
 }
 
-
-
 export default async function() {
-    const balance = await getBalance();
-    const transactions2 = await getP2PTransactions();
+   
     
 
     return <div className="w-screen">
-      <div className="m-5">
-       <TotalBalanceBox amount={balance.amount} locked={balance.locked} />
-       </div>
-
+    <div className="text-4xl text-[#6a51a6] pt-8 mb-8 font-bold">
+      Fund Transfer
+    </div>
+    <div className="grid grid-cols-1 gap-4 md:grid-cols-2 p-4 ">
+    <div className="pt-4">
+             <P2pTransfer/>
+            </div>
         
-    <div className="m-5">
-
-    <RecentTransactions transactions={transactions2} />
+        
+            
+        </div>
     </div>
 
-    </div>
 }
+
+

@@ -29,6 +29,7 @@ const RecentTransactions = ({
   return (
     <section className="flex w-full flex-col gap-6">
       <header className="flex items-center justify-between">
+        
         <h2 className="text-20 md:text-24 font-semibold text-gray-900">Recent transactions</h2>
         
       </header>

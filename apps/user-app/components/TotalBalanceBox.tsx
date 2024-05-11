@@ -1,4 +1,4 @@
-import { formatAmount } from "../app/lib/utils";
+
 import { AnimationCount } from "./AnimationCount";
 
 const TotalBalanceBox = ({ amount, locked }: { amount: number; locked: number }) => {
