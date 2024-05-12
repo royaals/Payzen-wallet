@@ -32,6 +32,9 @@ phone: z.string().regex(phoneRegex, 'Invalid Number!'),
 });
 
 const PaymentTransferForm = () => {
+  const [note, setNote] = useState("");
+  const [number, setNumber] = useState("");
+  const [amount, setAmount] = useState("");
     const router = useRouter();
     const [isLoading, setIsLoading] = useState(false);
   
@@ -47,7 +50,10 @@ const PaymentTransferForm = () => {
   
     const submit = async (data: z.infer<typeof formSchema>) => {
       setIsLoading(true);
-  
+      setNumber(data.phone);
+      setAmount(data.amount);
+      setNote(data.name);
+    };
   
     return (
       <Form {...form}>
@@ -156,7 +162,7 @@ const PaymentTransferForm = () => {
       </Form>
     );
   };
-}
+
  
 
 export default PaymentTransferForm;

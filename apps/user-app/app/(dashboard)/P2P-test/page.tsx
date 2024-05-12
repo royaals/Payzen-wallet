@@ -3,7 +3,7 @@ import prisma from "@repo/db/client";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../../lib/auth";
 import { SendCard } from "../../../components/SendCard"
-import { P2pTransfer } from "../../../components/P2PTransactions";
+import PaymentTransferForm from "../../../components/P2PTransfer"
 
 async function getBalance() {
     const session = await getServerSession(authOptions);
@@ -42,7 +42,7 @@ export default async function() {
     </div>
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2 p-4 ">
     <div className="pt-4">
-             <P2pTransfer/>
+             <PaymentTransferForm/>
             </div>
         
         
