@@ -4,7 +4,7 @@ import { authOptions } from "../auth";
 import prisma from "@repo/db/client";
 
 
-export async function p2pTransfer(to: string, amount: number) {
+export async function p2pTransfer(note: string,to: string, amount: number) {
     const session = await getServerSession(authOptions);
     const from = session?.user?.id;
     if (!from) {
@@ -47,6 +47,7 @@ export async function p2pTransfer(to: string, amount: number) {
         data: {
           fromUserId: Number(from),
           toUserId: toUser.id,
+          note,
           amount,
           timestamp: new Date(),
         },  

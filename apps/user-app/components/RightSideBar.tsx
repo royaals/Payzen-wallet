@@ -15,7 +15,7 @@ const RightSidebar = ()=> {
             </div>
   
             <div className="flex flex-col pt-24">
-              <h1 className='text-24 font-semibold text-gray-900'>
+              <h1 className='text-24 font-semibold text-violet-500  text-gray-900'>
                 Default
               </h1>
               <p className="text-16 font-normal text-gray-600">

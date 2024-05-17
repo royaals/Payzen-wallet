@@ -7,6 +7,7 @@ import { useState } from "react";
 import { p2pTransfer } from "../app/lib/actions/p2ptTransfer";
 
 export function SendCard() {
+    const [note, setNote] = useState("");
     const [number, setNumber] = useState("");
     const [amount, setAmount] = useState("");
 
@@ -14,6 +15,9 @@ export function SendCard() {
         <Center>
             <Card title="Send">
                 <div className="min-w-72 ">
+                <TextInput placeholder={"Note"} label="Note" onChange={(value) => {
+                        setNote(value)
+                    }} />
                     <TextInput placeholder={"Number"} label="Number" onChange={(value) => {
                         setNumber(value)
                     }} />
@@ -22,7 +26,7 @@ export function SendCard() {
                     }} />
                     <div className="pt-4 flex justify-center">
                         <Button onClick={async() => {
-                            await p2pTransfer(number, Number(amount)*100)
+                            await p2pTransfer(note,number, Number(amount)*100)
                         }}>Send</Button>
                     </div>
                 </div>

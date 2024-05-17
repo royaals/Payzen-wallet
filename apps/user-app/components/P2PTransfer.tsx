@@ -2,12 +2,11 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2 } from "lucide-react";
-import { useRouter } from "next/navigation";
+
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-
-
+import { p2pTransfer } from "../app/lib/actions/p2ptTransfer";
 
 import { Button } from "../@/components/ui/button";
 import {
@@ -25,9 +24,9 @@ const phoneRegex = new RegExp(
     /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/
   );
 const formSchema = z.object({
-phone: z.string().regex(phoneRegex, 'Invalid Number!'),
-  name: z.string().min(4, "Transfer note is too short"),
-  amount: z.string().min(2, "Amount is too short"),
+number: z.string().regex(phoneRegex, 'Invalid Number!'),
+  note: z.string().min(4, "Transfer note is too short"),
+  amount: z.string().min(1, "Amount is too short"),
  
 });
 
@@ -35,14 +34,14 @@ const PaymentTransferForm = () => {
   const [note, setNote] = useState("");
   const [number, setNumber] = useState("");
   const [amount, setAmount] = useState("");
-    const router = useRouter();
+   
     const [isLoading, setIsLoading] = useState(false);
   
     const form = useForm<z.infer<typeof formSchema>>({
       resolver: zodResolver(formSchema),
       defaultValues: {
-       name: "",
-        phone: "",
+       note: "",
+        number: "",
         amount: "",
       
       },
@@ -50,17 +49,22 @@ const PaymentTransferForm = () => {
   
     const submit = async (data: z.infer<typeof formSchema>) => {
       setIsLoading(true);
-      setNumber(data.phone);
+      setNumber(data.number);
       setAmount(data.amount);
-      setNote(data.name);
+      setNote(data.note);
+      try {
+        await p2pTransfer(note, number, Number(amount)*100);
+      } catch (error) {
+        console.error(error);
+      }
+      setIsLoading(false);
     };
-  
     return (
       <Form {...form}>
         <form onSubmit={form.handleSubmit(submit)}  className="flex flex-col">
          <FormField
             control={form.control}
-            name="name"
+            name="note"
             render={({ field }) => (
               <FormItem className="border-t border-gray-200">
                 <div className="flex w-full max-w-[850px] flex-col gap-3 md:flex-row lg:gap-8 pb-6 pt-5">
@@ -99,17 +103,17 @@ const PaymentTransferForm = () => {
   
           <FormField
             control={form.control}
-            name="phone"
+            name="number"
             render={({ field }) => (
               <FormItem className="border-t border-gray-200">
                 <div className="flex w-full max-w-[850px] flex-col gap-3 md:flex-row lg:gap-8 py-5">
                   <FormLabel className="text-14 w-full max-w-[280px] font-medium text-gray-700">
-                    Recipient&apos;s Email Address
+                    Recipient's Phone Number
                   </FormLabel>
                   <div className="flex w-full flex-col">
                     <FormControl>
                       <Input
-                        placeholder="ex: johndoe@gmail.com"
+                        placeholder="ex: 9876543210"
                         className="input-class"
                         {...field}
                       />
@@ -135,7 +139,7 @@ const PaymentTransferForm = () => {
                   <div className="flex w-full flex-col">
                     <FormControl>
                       <Input
-                        placeholder="ex: 5.00"
+                        placeholder="ex: 5"
                         className="input-class"
                         {...field}
                       />
@@ -147,17 +151,16 @@ const PaymentTransferForm = () => {
             )}
           />
   
-          <div className="mt-5 flex w-full max-w-[850px] gap-3 border-gray-200 py-5">
-            <Button type="submit" className="text-14 w-full bg-bank-gradient font-semibold text-white shadow-form !important">
+  <div className="mt-5 flex w-full max-w-[850px] gap-3 bg-[#6a51a6] rounded-lg">
+            <Button type="submit" className="text-14 w-full  text-white shadow-lg">
               {isLoading ? (
-                <>
-                  <Loader2 size={20} className="animate-spin" /> &nbsp; Sending...
-                </>
+                <Loader2 className="w-6 h-6 text-black" />
               ) : (
                 "Transfer Funds"
               )}
             </Button>
           </div>
+
         </form>
       </Form>
     );

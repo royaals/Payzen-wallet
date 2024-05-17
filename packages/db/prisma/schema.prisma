@@ -57,7 +57,7 @@ model p2pTransfer {
   description String@default("Transfer")
   type      String@default("debit")
   category  String@default("Transfer")
-   note     String?@default("Transfer")
+  note     String?@default("Transfer")
   fromUserId Int
   fromUser   User     @relation(name: "FromUserRelation", fields: [fromUserId], references: [id])
   toUserId   Int
