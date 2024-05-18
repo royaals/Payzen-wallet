@@ -37,7 +37,7 @@ import {
         amount: number,
         description: string,
         status: string,
-      
+     
         type: string,
         category: string
     }[]
@@ -48,6 +48,7 @@ import {
         <TableHeader className="bg-[#f9fafb]">
           <TableRow>
             <TableHead className="p-4">Transaction</TableHead>
+            <TableHead className="p-4">Note</TableHead>
             <TableHead className="p-4">Amount</TableHead>
             <TableHead className="p-4">Status</TableHead>
             <TableHead className="p-4">Date</TableHead>
@@ -70,7 +71,7 @@ import {
                     </h1>
                   </div>
                 </TableCell>
-  
+              
                 <TableCell className={`pl-2 pr-10 font-semibold  ${
                   isDebit || amount[0] === '-' ?
                     'text-[#f04438]'

@@ -41,7 +41,7 @@ async function getOnRampTransactions() {
         time: t.startTime,
         amount: t.amount,
         status: t.status,
-      
+
         description: t.description,
         type: t.type,
         category: t.category

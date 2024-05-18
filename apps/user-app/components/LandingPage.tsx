@@ -117,7 +117,7 @@ export const LandingPage = () => {
     </div>
   )
 }
-
+//@ts-ignore
 function BanknoteIcon(props) {
     return (
       <svg
@@ -138,33 +138,11 @@ function BanknoteIcon(props) {
       </svg>
     )
   }
+   
   
+  //@ts-ignore
   
-  function CircuitBoardIcon(props) {
-    return (
-      <svg
-        {...props}
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <rect width="18" height="18" x="3" y="3" rx="2" />
-        <path d="M11 9h4a2 2 0 0 0 2-2V3" />
-        <circle cx="9" cy="9" r="2" />
-        <path d="M7 21v-4a2 2 0 0 1 2-2h4" />
-        <circle cx="15" cy="15" r="2" />
-      </svg>
-    )
-  }
-  
-  
-  function ClockIcon(props) {
+function ClockIcon(props) {
     return (
       <svg
         {...props}
@@ -184,96 +162,12 @@ function BanknoteIcon(props) {
     )
   }
   
-  
-  function CoinsIcon(props) {
-    return (
-      <svg
-        {...props}
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <circle cx="8" cy="8" r="6" />
-        <path d="M18.09 10.37A6 6 0 1 1 10.34 18" />
-        <path d="M7 6h1v4" />
-        <path d="m16.71 13.88.7.71-2.82 2.82" />
-      </svg>
-    )
-  }
+
   
   
-  function ContactIcon(props) {
-    return (
-      <svg
-        {...props}
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M17 18a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2" />
-        <rect width="18" height="18" x="3" y="4" rx="2" />
-        <circle cx="12" cy="10" r="2" />
-        <line x1="8" x2="8" y1="2" y2="4" />
-        <line x1="16" x2="16" y1="2" y2="4" />
-      </svg>
-    )
-  }
   
   
-  function GaugeIcon(props) {
-    return (
-      <svg
-        {...props}
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="m12 14 4-4" />
-        <path d="M3.34 19a10 10 0 1 1 17.32 0" />
-      </svg>
-    )
-  }
-  
-  
-  function LockIcon(props) {
-    return (
-      <svg
-        {...props}
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
-        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-      </svg>
-    )
-  }
-  
-  
+    //@ts-ignore
   function MoveIcon(props) {
     return (
       <svg
@@ -297,7 +191,7 @@ function BanknoteIcon(props) {
       </svg>
     )
   }
-  
+    //@ts-ignore
   
   function PhoneIcon(props) {
     return (
@@ -318,136 +212,9 @@ function BanknoteIcon(props) {
     )
   }
   
+
   
-  function PieChartIcon(props) {
-    return (
-      <svg
-        {...props}
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
-        <path d="M22 12A10 10 0 0 0 12 2v10z" />
-      </svg>
-    )
-  }
-  
-  
-  function PiggyBankIcon(props) {
-    return (
-      <svg
-        {...props}
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-2h3v2h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2h0V5z" />
-        <path d="M2 9v1c0 1.1.9 2 2 2h1" />
-        <path d="M16 11h0" />
-      </svg>
-    )
-  }
-  
-  
-  function ReceiptIcon(props) {
-    return (
-      <svg
-        {...props}
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1-2-1Z" />
-        <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8" />
-        <path d="M12 17V7" />
-      </svg>
-    )
-  }
-  
-  
-  function ScalingIcon(props) {
-    return (
-      <svg
-        {...props}
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M21 3 9 15" />
-        <path d="M12 3H3v18h18v-9" />
-        <path d="M16 3h5v5" />
-        <path d="M14 15H9v-5" />
-      </svg>
-    )
-  }
-  
-  
-  function ShieldIcon(props) {
-    return (
-      <svg
-        {...props}
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
-      </svg>
-    )
-  }
-  
-  
-  function SmartphoneIcon(props) {
-    return (
-      <svg
-        {...props}
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
-        <path d="M12 18h.01" />
-      </svg>
-    )
-  }
-  
-  
+    //@ts-ignore
   function WalletIcon(props) {
     return (
       <svg

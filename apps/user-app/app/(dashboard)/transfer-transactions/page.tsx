@@ -38,6 +38,7 @@ async function getP2PTransactions() {
         description: t.description,
         status: t.status,
         type: t.type,
+       
         category: t.category
     }))
 }

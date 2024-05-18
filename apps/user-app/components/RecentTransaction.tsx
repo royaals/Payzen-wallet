@@ -12,7 +12,7 @@ const RecentTransactions = ({
         amount: number,
         description: string,
         status: string,
-  
+    
         type: string,
         category: string
     }[],
