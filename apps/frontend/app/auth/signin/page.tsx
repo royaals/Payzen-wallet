@@ -1,6 +1,6 @@
 import React from 'react'
 import Form from '../../../components/Form'
-import { Quote2 } from '../../../components/Quote2'
+import { Quote } from '../../../components/Quote'
 const Login = () => {
   return (
     <div>
@@ -9,7 +9,7 @@ const Login = () => {
         <Form type="signin"/>
         </div>
         <div className="hiddden lg:block">
-        <Quote2/>
+        <Quote/>
         </div>
        
       </div>
