@@ -13,7 +13,7 @@ const Form = ({type}: {type: "signup" | "signin"}) => {
  
 
   const onSubmit= async () => {
-    const result =await signIn("credentials",{
+    await signIn("credentials",{
      name:name.current,
      email: email.current,
      phone: phone.current,

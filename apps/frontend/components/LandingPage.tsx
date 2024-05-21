@@ -2,7 +2,7 @@
 import Link from "next/link"
 
 import { SignIn } from "../app/lib/actions/Signin";
-
+import Image from 'next/image'
 export const LandingPage = () => {
   return (
     <div>
@@ -91,7 +91,7 @@ export const LandingPage = () => {
                   </div>
                 </div>
               </div>
-              <img
+              <Image
                 alt="Mobile App"
                 className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last lg:aspect-square"
                 height="550"
