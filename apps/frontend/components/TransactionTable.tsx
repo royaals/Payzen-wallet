@@ -48,7 +48,7 @@ import {
         <TableHeader className="bg-[#f9fafb]">
           <TableRow>
             <TableHead className="p-4">Transaction</TableHead>
-            <TableHead className="p-4">Note</TableHead>
+          
             <TableHead className="p-4">Amount</TableHead>
             <TableHead className="p-4">Status</TableHead>
             <TableHead className="p-4">Date</TableHead>
