@@ -8,6 +8,12 @@ import { P2pTransfer } from "../../../components/P2PTransactions";
 
 
 
+interface OnRampTransaction {
+    startTime: Date;
+    amount: number;
+    status: string;
+    description: string;
+}
 
 
 async function getOnRampTransactions() {
@@ -17,13 +23,18 @@ async function getOnRampTransactions() {
             userId: Number(session?.user?.id)
         }
     });
-    return txns.map(t => ({
+    return txns.map((t: OnRampTransaction) => ({
         time: t.startTime,
         amount: t.amount,
         status: t.status,
-       
-        description: t.description 
-    }))
+        description: t.description,
+    }));
+}
+
+interface P2pTransaction {
+    timestamp: Date;
+    amount: number;
+    description: string;
 }
 
 async function getP2PTransactions() {
@@ -33,7 +44,7 @@ async function getP2PTransactions() {
             fromUserId: Number(session?.user?.id)
         }
     });
-    return txns.map(t => ({
+    return txns.map((t: P2pTransaction)=> ({
         time: t.timestamp,
         amount: t.amount,
         description: t.description,

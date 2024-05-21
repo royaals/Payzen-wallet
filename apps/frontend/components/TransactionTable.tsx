@@ -42,7 +42,7 @@ import {
         category: string
     }[]
 }) => {
-    const sortedTransactions = [...transactions].sort((a, b) => b.time - a.time);
+    const sortedTransactions = [...transactions].sort((a:any, b:any) => b.time - a.time);
     return (
       <Table>
         <TableHeader className="bg-[#f9fafb]">

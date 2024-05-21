@@ -31,6 +31,7 @@ async function getP2PTransactions() {
             fromUserId: Number(session?.user?.id)
         }
     });
+    //@ts-ignore
     return txns.map(t => ({
         id: t.id,
         time: t.timestamp,

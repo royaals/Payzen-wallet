@@ -35,6 +35,7 @@ async function getOnRampTransactions() {
             userId: Number(session?.user?.id)
         }
     });
+    //@ts-ignore
     return txns.map(t => ({
         id: t.id,
 

@@ -23,6 +23,7 @@ export async function p2pTransfer(note: string,to: string, amount: number) {
             message: "User not found"
         }
     }
+    //@ts-ignore
     await prisma.$transaction(async (tx) => {
         await tx.$queryRaw`SELECT * FROM "Balance" WHERE "userId" = ${Number(from)} FOR UPDATE`;
         
