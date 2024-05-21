@@ -1,5 +1,7 @@
 export const Quote = () => {
     return (
+
+      
       <div className="bg-slate-200 h-screen flex justify-center flex-col">
         <div className="flex justify-center">
           <div className="p-6 lg:p-10 dark:bg-gray-800">
