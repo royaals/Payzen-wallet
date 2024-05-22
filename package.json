@@ -6,7 +6,8 @@
     "dev": "turbo dev",
    
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "db:generate": "cd packages/db && npx prisma generate && cd ../.." 
+    "db:generate": "cd packages/db && npx prisma generate && cd ../..",
+    "start-frontend": "cd ./apps/frontend && npm run start"  
   },
   "devDependencies": {
    
