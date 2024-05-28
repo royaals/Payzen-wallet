@@ -28,7 +28,7 @@ export default function RootLayout({
     <html lang="en">
       <Providers>
         <body className={`${inter.variable} ${ibmPlexSerif.variable}`}>
-          <div className="min-w-screen min-h-screen ">
+          <div className=" min-w-screen min-h-screen ">
             
             {children}
           </div>
