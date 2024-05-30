@@ -38,4 +38,4 @@ jobs:
           sudo docker pull royal324/payzen:latest
           sudo docker stop web-app || true
           sudo docker rm web-app || true
-          sudo docker run -d --name web-app -p 3005:3000 royal324/payzen:latest
+          sudo docker run -e DATABASE_URL ${{SECRETS.DB_URL}} --restart-always -d --name web-app -p 3005:3000 royal324/payzen:latest
