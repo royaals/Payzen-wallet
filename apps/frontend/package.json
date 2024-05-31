@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev --port 3000",
-    "build": "npm run db:generate && next build",
-    "start": "next start",
-    "db:generate": "cd ../../packages/db && npx prisma generate"
+  
+    "start": "next start"
+    
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
