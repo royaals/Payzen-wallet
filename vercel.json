@@ -11,7 +11,16 @@
       }
     ],
     "routes": [
-      { "src": "/(.*)", "dest": "apps/frontend/.next/$1" }
+      {
+        "src": "/(.*)",
+        "dest": "apps/frontend/.next/$1"
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/(.*)",
+        "destination": "/"
+      }
     ]
   }
   
