@@ -1,23 +1,12 @@
 {
-    "version": 2,
-    "name": "payzen-frontend",
-    "builds": [
-      {
-        "src": "apps/frontend/package.json",
-        "use": "@vercel/next"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "apps/frontend/$1"
-      }
-    ],
-    "rewrites": [
-      {
-        "source": "/(.*)",
-        "destination": "/"
-      }
-    ]
-  }
-  
+  "version": 2,
+  "builds": [
+    {
+      "src": "apps/frontend/package.json",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "apps/frontend/$1" }
+  ]
+}
