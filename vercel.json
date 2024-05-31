@@ -1,0 +1,17 @@
+{
+    "version": 2,
+    "builds": [
+      {
+        "src": "apps/frontend/package.json",
+        "use": "@vercel/next",
+        "config": {
+          "installCommand": "npm install",
+          "buildCommand": "npm run build"
+        }
+      }
+    ],
+    "routes": [
+      { "src": "/(.*)", "dest": "apps/frontend/.next/$1" }
+    ]
+  }
+  
