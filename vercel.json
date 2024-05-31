@@ -8,5 +8,10 @@
   ],
   "routes": [
     { "src": "/(.*)", "dest": "apps/frontend/$1" }
-  ]
+  ],
+  
+    "rewrites": [
+        {"source": "/(.*)", "destination": "/"}
+    ]
+
 }
