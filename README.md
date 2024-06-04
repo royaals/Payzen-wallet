@@ -31,13 +31,7 @@ PayZen is a comprehensive financial application that allows users to add money f
    ```bash
    npm install
    ```
-3. Copy the `.env.example` file to `.env.local`:   
-   ```bash
-   cp .env.example .env.local
-   ```
-4. Insert your credentials into the environment variables in the `.env.local` file.
-
-5. Start the development server:
+3. Start the development server:
    ```bash
    npm run dev
    ```
