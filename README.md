@@ -41,21 +41,3 @@ PayZen is a comprehensive financial application that allows users to add money f
    ```bash
    npm run dev
    ```
-### Using Docker for Local Development
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/royaals/Payzen-wallet.git
-   ```
-
-2. Install the dependencies:
-   ```bash
-   npm install
-   ```
-   
-3. Insert your credentials into the environment variables in the `docker-compose.yml` file.   
-
-4. Run the Docker Compose command to start the development server:
-   ```bash
-   docker-compose up --build
-   ```
