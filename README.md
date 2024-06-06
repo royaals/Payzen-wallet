@@ -1,6 +1,6 @@
 # PayZen
 
-PayZen is a comprehensive financial application that allows users to add money from their bank accounts and perform peer-to-peer transactions.
+PayZen is a comprehensive financial application that allows users to add money to wallet and perform peer-to-peer transactions.
 
 ## Features
 
