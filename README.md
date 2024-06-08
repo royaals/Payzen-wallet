@@ -34,13 +34,17 @@ PayZen is a comprehensive financial application that allows users to add money t
 3. Navigate to the DB directory:
    ```bash
     cd packages/db
-   ```   
-4. Run Prisma migrations. This command will apply the database schema changes:
+   ``` 
+   - Rename `.env.example` to `.env` in the `packages/db` and update the following values:
+
+   - `DATABASE_URL`: This should be your PostgreSQL database URL. For example, if you're using Docker, it would look something like this: `postgresql://postgres:yourpassword@localhost:5432/postgres`. If you're using a PostgreSQL provider like Neon.tech, Supabase, Aiven, etc., use the URL they provide.
+
+4. Run Prisma migrations in the `packages/db`. This command will apply the database schema changes:
     ```bash
     npx prisma migrate dev --name init
     ```
 
-5. Generate the Prisma client. This command will generate the Prisma client code:
+5. Generate the Prisma client in the `packages/db`. This command will generate the Prisma client code:
     ```bash
     npx prisma generate
     ```   
