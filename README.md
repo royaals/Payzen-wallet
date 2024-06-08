@@ -31,7 +31,20 @@ PayZen is a comprehensive financial application that allows users to add money t
    ```bash
    npm install
    ```
-3. Start the development server:
+3. Navigate to the DB directory:
+   ```bash
+    cd packages/db
+   ```   
+4. Run Prisma migrations. This command will apply the database schema changes:
+    ```bash
+    npx prisma migrate dev --name init
+    ```
+
+5. Generate the Prisma client. This command will generate the Prisma client code:
+    ```bash
+    npx prisma generate
+    ```   
+6. Start the development server:
    ```bash
    npm run dev
    ```
