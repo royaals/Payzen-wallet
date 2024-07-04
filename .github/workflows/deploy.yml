@@ -1,0 +1,42 @@
+name: Build and Deploy to Docker Hub
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Out Repo
+        uses: actions/checkout@v2
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build and Push Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./docker/Dockerfile.frontend
+          push: true
+          tags: royal324/payzen:latest
+
+      - name: Verify Pushed Image
+        run: docker pull royal324/payzen:latest
+
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@v0.1.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            sudo docker pull royal324/payzen:latest
+            sudo docker stop web-app || true
+            sudo docker rm web-app || true
+            sudo docker run -d --restart=always --name web-app -p 3005:3000 -e DATABASE_URL=${{ secrets.DB_URL }} royal324/payzen:latest
