@@ -28,6 +28,7 @@ jobs:
 
     - name: Verify Pushed Image
       run: docker pull royal324/payzen:latest  
+
     - name: Deploy to EC2
       uses: appleboy/ssh-action@master
       with:
@@ -35,8 +36,10 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.SSH_KEY }}
         script: |
+          sudo docker system prune -af
+          if [ "$(sudo docker ps -aq -f name=web-app)" ]; then
+              sudo docker stop web-app
+              sudo docker rm web-app
+          fi
           sudo docker pull royal324/payzen:latest
-          sudo docker stop web-app || true
-          sudo docker rm web-app || true
-          sudo docker run -d --name web-app -p 3005:3000 royal324/payzen:latest
-          sudo docker run -d  --name web-app -p 3005:3000 -e DATABASE_URL=${{ secrets.DB_URL }} royal324/payzen:latest
+          sudo docker run -d --name web-app -p 3005:3000 -e DATABASE_URL=${{ secrets.DB_URL }} royal324/payzen:latest
