@@ -3,7 +3,7 @@ name: Build and Deploy to Docker Hub
 on:
   push:
     branches:
-      - main  # Adjusted to trigger on pushes to master
+      - main
 
 jobs:
   build-and-push:
@@ -11,9 +11,6 @@ jobs:
     steps:
     - name: Check Out Repo
       uses: actions/checkout@v2
-
-    - name: Prepare Dockerfile
-      run: cp ./docker/Dockerfile.user ./Dockerfile
 
     - name: Log in to Docker Hub
       uses: docker/login-action@v1
@@ -27,11 +24,10 @@ jobs:
         context: .
         file: ./docker/Dockerfile.frontend
         push: true
-        tags: 100xdevs/web-app:latest
+        tags: royal324/payzen:latest  
 
     - name: Verify Pushed Image
-      run: docker pull 100xdevs/web-app:latest
-
+      run: docker pull royal324/payzen:latest  
     - name: Deploy to EC2
       uses: appleboy/ssh-action@master
       with:
@@ -39,8 +35,7 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         key: ${{ secrets.SSH_KEY }}
         script: |
-          sudo docker pull 100xdevs/web-app:latest
+          sudo docker pull royal324/payzen:latest
           sudo docker stop web-app || true
           sudo docker rm web-app || true
-          sudo docker run -d --name web-app -p 3005:3000 100xdevs/web-app:latest
-          sudo docker run -d --restart=always --name web-app -p 3005:3000 -e DATABASE_URL=${{ secrets.DB_URL }} 100xdevs/web-app:latest
+          sudo docker run -d --restart=always --name web-app -p 3005:3000 -e DATABASE_URL=${{ secrets.DB_URL }} royal324/payzen:latest
