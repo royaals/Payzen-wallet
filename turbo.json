@@ -1,16 +1,17 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": ["**/.env.*local"],
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "env": ["DATABASE_URL"],
+      "outputs": ["dist/**"]
     },
-   
-   
-    "dev": {
-      "cache": false,
-      "persistent": true
+    "frontend#build": {
+      "dependsOn": ["^build"],
+      "env": ["DATABASE_URL"],
+      "outputs": [".next/**", "!.next/cache/**"]
     }
-  }
+  },
+  "globalEnv": ["DATABASE_URL"],
+  "globalDependencies": ["tsconfig.json"]
 }
