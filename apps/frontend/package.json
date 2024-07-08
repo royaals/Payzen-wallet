@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev --port 3000",
-    "build": "npm run db:generate && next build",
-    "start": "next start",
-    "db:generate": "cd ../../packages/db && npx prisma generate"
+  
+    "start": "next start"
+    
   },
   "dependencies": {
+    "@repo/db": "*",
     "@hookform/resolvers": "^3.3.4",
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-slot": "^1.0.2",
