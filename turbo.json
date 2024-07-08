@@ -6,15 +6,17 @@
       "env": ["DATABASE_URL"],
       "outputs": ["dist/**"]
     },
-    "db#build": {
-      "outputs": ["packages/db/**"]
-    },
     "frontend#build": {
-      "dependsOn": ["^build", "db#build"],
+      "dependsOn": ["^build"],
       "env": ["DATABASE_URL"],
       "outputs": [".next/**", "!.next/cache/**"]
     }
   },
-  "globalEnv": ["DATABASE_URL"],
-  "globalDependencies": ["tsconfig.json"]
+  "globalEnv": [
+    "DATABASE_URL",
+    "GITHUB_TOKEN"
+  ],
+  "globalDependencies": [
+    "tsconfig.json"
+  ]
 }
