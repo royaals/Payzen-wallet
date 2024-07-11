@@ -7,7 +7,7 @@ export default async function Page() {
   if (session?.user) {
     redirect('/home')
   } else {
-    redirect('/api/auth/signin')
+    redirect('/payzen')
   }
 }
 
