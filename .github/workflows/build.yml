@@ -10,20 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "20"
-
+          node-version: '20'
+      
       - name: Install Dependencies
         run: npm install
-
-      - name: Generate Prisma Client
-        run: npm run db:generate
-
-      - name: Install Frontend Dependencies and Build
-        run: |
-          cd ./apps/frontend
-          npm install
-          npm run build
+        
+      - name: Run Build
+        run: npm run build
