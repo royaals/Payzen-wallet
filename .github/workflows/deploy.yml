@@ -39,6 +39,6 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         script: |
           sudo docker pull royaals28/payzenwallets:latest
-          sudo docker stop royaals28/payzenwallets:latest || true
-          sudo docker rm royaals28/payzenwallets:latest || true
-          sudo docker run -d --name royaals28/payzenwallets --restart always -p 3005:3000 -e DATABASE_URL=${{ secrets.DB_URL }} royaals28/payzenwallets:latest
+          sudo docker stop payzenwallets:latest || true
+          sudo docker rm payzenwallets:latest || true
+          sudo docker run -d --name payzenwallets --restart always -p 3005:3000 -e DATABASE_URL=${{ secrets.DB_URL }} royaals28/payzenwallets:latest
