@@ -18,8 +18,9 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build Next.js Application
-        run: cd ./apps/frontend
+      - name: Install Frontend Dependencies and Build
+        run: |
+          cd ./apps/frontend
           npm install
           npm run build
 
