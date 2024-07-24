@@ -48,4 +48,7 @@ PayZen is a comprehensive financial application that allows users to add money t
     ```bash
     npx prisma generate
     ```   
-
+6. Start the development server:
+   ```bash
+   npm run dev
+   ```
