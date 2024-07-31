@@ -44,3 +44,11 @@ PayZen is a comprehensive financial application that allows users to add money t
     npx prisma migrate dev --name init
     ```
 
+5. Generate the Prisma client in the `packages/db`. This command will generate the Prisma client code:
+    ```bash
+    npx prisma generate
+    ```   
+6. Start the development server:
+   ```bash
+   npm run dev
+   ```
