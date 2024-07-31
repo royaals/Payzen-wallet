@@ -12,8 +12,6 @@ jobs:
     - name: Check Out Repo
       uses: actions/checkout@v2
 
-
-
     - name: Log in to Docker Hub
       uses: docker/login-action@v1
       with:
@@ -39,6 +37,6 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         script: |
           sudo docker pull royaals28/payzenwallets:latest
-          sudo docker stop payzenwallets:latest || true
-          sudo docker rm payzenwallets:latest || true
+          sudo docker stop payzenwallets || true
+          sudo docker rm payzenwallets || true
           sudo docker run -d --name payzenwallets --restart always -p 3005:3000 -e DATABASE_URL=${{ secrets.DB_URL }} royaals28/payzenwallets:latest
