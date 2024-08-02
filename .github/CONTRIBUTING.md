@@ -50,9 +50,7 @@ When submitting a pull request, please:
 
 This project adheres to a [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
 
-### Getting Help
 
-If you need help, feel free to ask by opening an issue or joining our community on [your communication platform, e.g., Slack, Discord, etc.].
 
 ## Acknowledgements
 
