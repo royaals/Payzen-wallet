@@ -22,7 +22,7 @@ spec:
           protocol: TCP
         env:
         - name: DATABASE_URL
-          value: "Replace this with your Cloud PostgreSQL DATABASE_URL"
+          value: "Replace with your Cloud PostgreSQL Database URL"
         resources:
           requests:
             memory: "100Mi"
