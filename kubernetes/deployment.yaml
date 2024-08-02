@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: payzen
-        image: your_dockerhub_image:linux
+        image: royaals28/payzenwallets:linux
         ports:
         - containerPort: 3000
           protocol: TCP
