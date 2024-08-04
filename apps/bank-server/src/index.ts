@@ -1,6 +1,6 @@
 import express from "express";
 import db from "@repo/db/client";
-const app = express();
+export const app = express();
 
 app.use(express.json())
 
@@ -51,4 +51,3 @@ app.post("/hdfcWebhook", async (req, res) => {
 
 })
 
-app.listen(3004);
