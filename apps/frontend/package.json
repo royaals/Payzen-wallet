@@ -6,14 +6,13 @@
     "dev": "next dev --port 3000",
     "build": "next build",
     "start": "next start"
-    
   },
   "dependencies": {
-    "@repo/db": "*",
     "@hookform/resolvers": "^3.3.4",
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-tabs": "^1.0.4",
+    "@repo/db": "*",
     "@repo/store": "*",
     "@repo/ui": "*",
     "@types/bcrypt": "^5.0.2",
@@ -38,6 +37,7 @@
     "@types/react": "^18.2.61",
     "@types/react-dom": "^18.2.19",
     "autoprefixer": "^10.4.19",
+    "cypress": "^13.13.2",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
