@@ -11,6 +11,7 @@
     "build-frontend": "cd ./apps/frontend && npm run build",
     "build-bank-server": "cd ./apps/bank-server && npm run build && cd ../..",
     "start-bank-server": "cd ./apps/bank-server && npm run start"
+   
   },
   "devDependencies": {
     "@repo/typescript-config": "*",
