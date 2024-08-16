@@ -18,6 +18,7 @@ PayZen is a comprehensive financial application that allows users to add money t
 - Turborepo
 - PostgreSQL
 - Node.js
+- Express.js
 - jest
 - Docker
 - Kubernetes
