@@ -39,4 +39,7 @@ jobs:
           sudo docker pull royaals28/payzenwallets:latest
           sudo docker stop payzenwallets || true
           sudo docker rm payzenwallets || true
-          sudo docker run -d --name payzenwallets --restart always -p 3005:3000 -e DATABASE_URL=${{ secrets.DB_URL }} royaals28/payzenwallets:latest
+          sudo docker run -d --name payzenwallets --restart always -p 3005:3000 \
+            -e DATABASE_URL=${{ secrets.DB_URL }} \
+            -e NEXTAUTH_URL=https://payzen.devprojects.world \
+            royaals28/payzenwallets:latest

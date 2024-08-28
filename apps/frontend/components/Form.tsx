@@ -19,7 +19,7 @@ const Form = ({type}: {type: "signup" | "signin"}) => {
      phone: phone.current,
      password: pass.current,
      redirect: true,
-     callbackUrl: `http://payzen.devprojects.world/home`
+     callbackUrl: `/home`
     })
   }
   return (

@@ -10,7 +10,7 @@ export function AppbarClient() {
   return (
    <div>
       <Appbar onSignin={signIn} onSignout={async () => {
-       await signOut({ callbackUrl: `http://payzen.devprojects.world/payzen` })
+       await signOut({ callbackUrl: `/payzen` })
         }} user={session.data?.user} />
    </div>
   );
