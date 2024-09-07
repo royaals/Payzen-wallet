@@ -19,11 +19,12 @@ PayZen is a comprehensive financial application that allows users to add money t
 - PostgreSQL
 - Node.js
 - Express.js
+- Nginx
 - jest
 - Docker
 - Kubernetes
 - AWS
-- New Relic 
+- New Relic
 
 ## Development Setup
 
