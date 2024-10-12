@@ -19,7 +19,8 @@ PayZen is a comprehensive financial application that allows users to add money t
 - PostgreSQL
 - Node.js
 - Express.js
-- Nginx
+- Nginx (Reverse Proxy)
+- Docker
 - jest
 - Docker
 - Kubernetes
