@@ -1,11 +1,11 @@
 import express from "express";
 import db from "@repo/db/client";
-export const app = express();
+const app = express();
 
 app.use(express.json())
 
 app.post("/hdfcWebhook", async (req, res) => {
-
+    
     const paymentInformation: {
         token: string;
         userId: string;
@@ -24,7 +24,7 @@ app.post("/hdfcWebhook", async (req, res) => {
                 },
                 data: {
                     amount: {
-                     
+                       
                         increment: Number(paymentInformation.amount)
                     }
                 }
@@ -51,3 +51,4 @@ app.post("/hdfcWebhook", async (req, res) => {
 
 })
 
+app.listen(3003);

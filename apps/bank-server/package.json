@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx esbuild ./src/index.ts --bundle --platform=node --outfile=dist/index.js && npx esbuild ./src/bin.ts --bundle --platform=node --outfile=dist/bin.js",
-    "start": "node dist/bin.js",
+    "build": "npx esbuild ./src/index.ts --bundle --platform=node --outfile=dist/index.js && npx esbuild ./src/index.ts --bundle --platform=node --outfile=dist/index.js",
+    "start": "node dist/index.js",
     "dev": "npm run build && npm run start",
     "test": "jest",
     "lint": "eslint . "
