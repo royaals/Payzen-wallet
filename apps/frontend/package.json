@@ -1,5 +1,5 @@
 {
-  "name": "payzen",
+  "name": "frontend-payzen",
   "version": "1.1.0",
   "private": true,
   "scripts": {
@@ -19,7 +19,7 @@
     "bcrypt": "^5.1.1",
     "class-variance-authority": "^0.7.0",
     "lucide-react": "^0.378.0",
-    "next": "^14.1.1",
+    "next": "14.2.35",
     "next-auth": "^4.24.7",
     "query-string": "^9.0.0",
     "react": "^18.2.0",

@@ -1,22 +1,35 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "pipeline": {
-    "build": {
-      "dependsOn": ["^build"],
-      "env": ["DATABASE_URL"],
-      "outputs": ["dist/**"]
-    },
-    "frontend#build": {
-      "dependsOn": ["^build"],
-      "env": ["DATABASE_URL"],
-      "outputs": [".next/**", "!.next/cache/**"]
-    }
-  },
   "globalEnv": [
     "DATABASE_URL",
     "GITHUB_TOKEN"
   ],
   "globalDependencies": [
     "tsconfig.json"
-  ]
+  ],
+  "tasks": {
+    "build": {
+      "dependsOn": [
+        "^build"
+      ],
+      "env": [
+        "DATABASE_URL"
+      ],
+      "outputs": [
+        "dist/**"
+      ]
+    },
+    "frontend#build": {
+      "dependsOn": [
+        "^build"
+      ],
+      "env": [
+        "DATABASE_URL"
+      ],
+      "outputs": [
+        ".next/**",
+        "!.next/cache/**"
+      ]
+    }
+  }
 }
